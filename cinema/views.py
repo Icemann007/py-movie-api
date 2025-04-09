@@ -31,6 +31,5 @@ def movie_detail(request, pk):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
-    else:
-        movie.delete()
-        return Response(status=status.HTTP_404_NOT_FOUND)
+    movie.delete()
+    return Response(status=status.HTTP_404_NOT_FOUND)
